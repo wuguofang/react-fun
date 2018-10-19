@@ -1,6 +1,5 @@
 .idea/
 node_modules/
-dist/
 *.rar
 *.zip
 npm-debug.log
