@@ -50,10 +50,24 @@ module.exports = {
       }]
   },
   plugins: [
+    new webpack.DefinePlugin({
+      "process.env": { 
+         NODE_ENV: JSON.stringify("production") 
+       }
+    }),
     new ExtractTextPlugin("app.css"),
     new HtmlWebpackPlugin({
 			template: __dirname + "/index.html",
 			filename: 'index.html'
-		}),
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      warnings: false,
+      compress: {
+          join_vars: true,
+          warnings: false,
+      },
+      toplevel: false,
+      ie8: false,
+    }),
   ]
 };
