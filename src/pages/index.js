@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Carousel, Card, BackTop, Icon} from 'antd'
+import { Link } from 'react-router'
 import MovieColumn from '../components/Movie/MovieColumn'
 import HotColumn from '../components/Hot/HotColumn'
 import MusicColumn from '../components/Music/MusicColumn'

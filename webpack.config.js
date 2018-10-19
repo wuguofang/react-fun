@@ -4,11 +4,12 @@ var ROOT_PATH = path.resolve(__dirname); // 项目跟路径
 var APP_PATH = path.resolve(ROOT_PATH, 'src'); // 项目开发目录src
 var APP_FILE = path.resolve(APP_PATH, 'app.js'); // 项目入口的index.js
 var ExtractTextPlugin = require("extract-text-webpack-plugin"); // 打包css插件
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: APP_FILE,
   output: {
-      path: APP_PATH,
+      path: path.join(__dirname,"./dist"),
       filename: "bundle.js"
   },
   module: {
@@ -49,6 +50,10 @@ module.exports = {
       }]
   },
   plugins: [
-    new ExtractTextPlugin("app.css")
+    new ExtractTextPlugin("app.css"),
+    new HtmlWebpackPlugin({
+			template: __dirname + "/index.html",
+			filename: 'index.html'
+		}),
   ]
 };

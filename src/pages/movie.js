@@ -7,6 +7,8 @@ const {Content, Sider} = Layout
 
 export default class Movie extends Component {
   render() {
+    console.log('=====router=====');
+    console.log(this.props.params)
     return (
       <div>
         <Layout>
